@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+/*        "https:fonts.googleapis.com/css?family=Inconsolata:400,700")
+*/      body {
+            font-family: 'Inconsolata',sans-serif;
+            background: #2a364f;
+        }
+        h1{
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .credit{
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .content{
+            padding-top: 45px;
+            padding-bottom: 20px;
+        }
+        .button_container{
+            width: 176px;
+            margin: 0,auto;
+            margin-top: 30px;
+            padding-top: 40px;
+        }
+        .button_su{
+            margin-left: 500px;
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            border-radius: 3px;
+            margin-bottom: 30px;
+            box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+        }
+        .su_button_circle{
+            background-color: red;
+            border-radius: 1000px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0px;
+            height: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            pointer-events: none;
+        }
+        .button_su_inner{
+            display: inline-block;
+            background: #F8B627;
+            color: #F4F4F4;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 20px;
+            z-index: 100000;
+        }
+        .button_text_container{
+            position: relative;
+            z-index: 10000;
+        }
+        .exploid-circle{
+            animation: explode 0.5s forwards;
+        }
+        .desplode-circle{
+            animation: desplode 0.5s forwards;
+        }
+    </style>
+</head>
+<body>
+	<div class="content">
+        <h1>Different Between inline Event and Event Listner</h1>
+        <div class="button_container">
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner">
+                    <span class="button_text_container" id="thirdWay">
+                        Inline Event
+                    </span>
+                </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner" id="fourthWay">
+                    <span class="button_text_container">
+                        Event Listner
+                    </span>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        //3rd way
+    	const thirdWay=document.getElementById('thirdWay');
+    	thirdWay.onclick=function(){
+    		alert('Calling function using events');
+    	}
+    	thirdWay.onclick=function(){
+    		alert('again Calling function using onclick');
+    	}
+        //1st way
+        const fourthWay=document.querySelector('#fourthWay');
+        fourthWay.addEventListener('click',()=>{
+            alert('I am another way of using events')
+        });
+        //2nd way
+        const callingFunction=()=>{
+            console.log('I am another way of using events 2')
+        }
+        fourthWay.addEventListener('click',callingFunction);
+
+        // This is bcoz addEventlistner does not overwrite existing event handlers, 
+        //whereas onclick overrides any existing onclick=fn event handlers.
+
+        //The older significant difference,of course, is that onclick will always work,
+        //whereas addEventListner does not work in Internet Explorer before version 9.
+    </script>
+
+</body>
+</html>

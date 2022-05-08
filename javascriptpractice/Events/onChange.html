@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+          body {
+            font-family: 'Inconsolata',sans-serif;
+            background: #2a364f;
+        }
+        .main-div {
+            display: grid;
+            place-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        label{
+        	color: white;
+        	font-size: 30px;
+        	font-family: sans-serif;
+        }
+        input[type="text"]{
+            font: 15px/24px "Lato", Arial, sans-serif;
+            color: #333;
+            width: 30%;
+            place-item: center;
+        }
+        select {
+        	font: 15px/24px "Lato", Arial, sans-serif;
+            color: #333;
+            width: 20%;
+            place-item: center;
+        }
+        #result{
+        	color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+	<div class="main-div">
+		<div>
+			<label for=" ">Your Name</label>
+			<input type="text" name="" id="ice">
+			<br>
+			<label>
+				Choose an icecream flavour
+				<select id="iceCreams" name="=iceCreams" onchange="selectElement()">
+					<option value="">select one....</option>
+					<option value="Chocolate">Chocolate</option>
+					<option value="sardine">sardine</option>
+					<option value="vanilla">vanilla</option>
+				</select>
+			</label>
+			<br>
+			<div id="result"></div>
+		</div>
+	</div>
+
+	<script>
+		const selectElement=()=>{
+			const inputChange=document.getElementById('ice').value;
+			const iceCreams=document.getElementById('iceCreams').value;
+			const result=document.getElementById('result');
+			result.innerHTML=`${inputChange} and ${iceCreams}`;
+			console.log(`${inputChange} and ${iceCreams}`);  //result show in console
+		}
+
+        //  2nd md
+		// const iceCreams=document.getElementById('iceCreams');
+		// iceCreams.addEventListener('change',()=>{
+		// 	const inputChange=document.getElementById('ice').value;
+		// 	const iceCreams=document.getElementById('iceCreams').value;
+		// 	const result=document.getElementById('result');
+		// 	result.innerHTML=`${inputChange} and ${iceCreams}`;
+		// })
+	</script>
+
+</body>
+</html>

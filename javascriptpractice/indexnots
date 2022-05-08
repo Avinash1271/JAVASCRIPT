@@ -1,0 +1,40 @@
+                                  JAVASCRIPT
+-->>>var function scope
+-->>>let,const block scope
+
+
+###Array
+*Array.prototype._______
+->indexOf
+->LastIndexOf
+->includes
+->find
+->findIndex
+->filter
+->push
+->unshift
+->pop
+->shift
+->map
+->reduce
+
+
+
+###String
+->variable.length
+->variable.search
+->variable.indexOf
+->variable.replace
+->variable.charAt
+->variable.toUpperCase()
+->variable.split
+
+//3 methods for extracting a part of string
+// slice(start,end);
+// subststring(start,end);
+// substr(start,end);
+
+
+
+//##### DATE AND TIME IN JAVASCRIPT #####//
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style type="text/css">
+          body {
+            font-family: 'Inconsolata',sans-serif;
+            background: #2a364f;
+        }
+        .main-div{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .main-div p{
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 30px;
+        }
+        #keys{
+            color: burlywood;
+        }
+        .effect-1{
+            border: 0;
+            padding: 7px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .effect-1 ~ .focus-border{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+        }
+        .effect-1:focus ~ .focus-border{
+            width: 100%;
+            transition: 0.4s;
+        }
+        input[type="text"]{
+            font: 15px/24px "Lato", Arial, sans-serif;
+            color: #333;
+            width: 30%;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div>
+            <p>A function is triggered when the user is pressing a key in the input field </p>
+            <br>
+            <input type="text" class="effect-1" onkeypress="keyPress1()" onkeydown="keyDown1()" onkeyup="keyUp1()" >
+            <p id="keys"></p>
+        </div>
+    </div>
+    <script>
+        const keyPress1=()=>{
+            document.getElementById('keys').innerHTML=`you press ${event.key} and its code is ${event.code}`;
+        }
+        const keyDown1 = ()=>{
+            document.getElementById('keys').innerHTML=`key is down`;
+        }
+        const keyUp1 = ()=>{
+            document.getElementById('keys').innerHTML=`key is up`;
+        }
+    </script>
+
+</body>
+</html>
